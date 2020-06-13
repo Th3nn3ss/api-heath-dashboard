@@ -1,16 +1,21 @@
+<?php
+session_start();
+require('functions.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
     <title>Dashboard</title>
 </head>
-<?php
-session_start();
-?>
+
 
 <body>
     <nav id="nav-bar">
@@ -22,148 +27,9 @@ session_start();
             <h2><i class="fas fa-tachometer-alt"></i> <span class="dash-text">DASHBOARD</span> </h2>
             <h2><i class="fas fa-server"></i> <span class="dash-text">API's</span> </h2>
             <ul>
-                <li class="apis"><i class="fas fa-users-cog"></i> <span class="dash-text">User Manager</span><i class="fas fa-angle-down left"></i>
-                    <div class="endpoints">
-
-                        <p class="api-name">User Manager</p>
-                        <p>End Points</p>
-                        <ul>
-                            <li>Add User</li>
-                            <li>Remove User</li>
-                            <li>Set User Firstname</li>
-                            <li>Set User Lastname</li>
-                            <li>Change User Email</li>
-                            <li>Set User Phone</li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li class="apis"> <i class="fas fa-user-lock"></i> <span class="dash-text">Authentication</span> <i class="fas fa-angle-down left"></i>
-                    <div class="endpoints">
-
-                        <p class="api-name">Authentication</p>
-                        <p>End Points</p>
-                        <ul>
-
-                            <li>Login</li>
-                            <li>Logout</li>
-                            <li>Reset Password</li>
-                            <li>Login with google</li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li class="apis"><i class="fas fa-cogs"></i> <span class="dash-text">Company Settings</span> <i class="fas fa-angle-down left"></i>
-                    <div class="endpoints">
-
-                        <p class="api-name">Company Settings</p>
-                        <p>End Points</p>
-                        <ul>
-                            <li>Add Company</li>
-                            <li>Delete Company</li>
-                            <li>Set Company Name</li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li class="apis"><i class="fas fa-mail-bulk"></i>
-                    <span class="dash-text">Send Email Notification</span> <i class="fas fa-angle-down left"></i>
-                    <div class="endpoints">
-
-                        <p class="api-name">Send Email Notification</p>
-                        <p>End Points</p>
-                        <ul>
-                            <li>Send Email</li>
-                            <li>Send Email with Template</li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li class="apis"><i class="fas fa-user-shield"></i> <span class="dash-text">Show Dashboard</span> <i class="fas fa-angle-down left"></i>
-                    <div class="endpoints">
-
-                        <p class="api-name">Show Dashboard</p>
-                        <p>End Points</p>
-                        <ul>
-
-                            <li>Add User</li>
-                            <li>Remove User</li>
-                            <li>Set User Firstname</li>
-                            <li>Set User Lastname</li>
-                            <li>Change User Email</li>
-                            <li>Set User Phone</li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li class="apis"><i class="far fa-newspaper"></i> <span class="dash-text">Sending Newsletter</span> <i class="fas fa-angle-down left"></i>
-                    <div class="endpoints">
-
-                        <p class="api-name">Sending Newsletter</p>
-                        <p>End Points</p>
-                        <ul>
-
-                            <li>Add User</li>
-                            <li>Remove User</li>
-                            <li>Set User Firstname</li>
-                            <li>Set User Lastname</li>
-                            <li>Change User Email</li>
-                            <li>Set User Phone</li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li class="apis"><i class="fas fa-cloud"></i> <span class="dash-text">CRUD</span> <i class="fas fa-angle-down left"></i>
-                    <div class="endpoints">
-
-                        <p class="api-name">CRUD</p>
-                        <p>End Points</p>
-                        <ul>
-
-                            <li>Add User</li>
-                            <li>Remove User</li>
-                            <li>Set User Firstname</li>
-                            <li>Set User Lastname</li>
-                            <li>Change User Email</li>
-                            <li>Set User Phone</li>
-                        </ul>
-                </li>
-                <li class="apis"><i class="far fa-paper-plane"></i><span class="dash-text">SAAS App Subscription</span>
-                    <i class="fas fa-angle-down left"></i>
-                    <div class="endpoints">
-
-                        <p class="api-name">SAAS App Subscription</p>
-                        <p>End Points</p>
-                        <ul>
-
-                            <li>Add User</li>
-                            <li>Remove User</li>
-                            <li>Set User Firstname</li>
-                            <li>Set User Lastname</li>
-                            <li>Change User Email</li>
-                            <li>Set User Phone</li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li class="apis"><i class="fas fa-envelope-open-text"></i> <span class="dash-text">Team
-                        Invitation</span>
-                    <i class="fas fa-angle-down left"></i>
-                    <div class="endpoints">
-
-                        <p class="api-name">Team
-                            Invitation</p>
-                        <p>End Points</p>
-                        <ul>
-                            <li>Add User</li>
-                            <li>Remove User</li>
-                            <li>Set User Firstname</li>
-                            <li>Set User Lastname</li>
-                            <li>Change User Email</li>
-                            <li>Set User Phone</li>
-                        </ul>
-                    </div>
-                </li>
+                <?php
+                getapis();
+                ?>
             </ul>
         </div>
         <div id="widget">
@@ -171,9 +37,89 @@ session_start();
         </div>
     </div>
     <div id="result">
-        <h1>Results here</h1>
+        <h1>END POINT RESULTS</h1>
+        <?php
+        if (isset($_SESSION['success']) && !empty($_SESSION['success'])) {
+            unset($_SESSION['success']);
+        ?>
+            <div id="status" class="success">
+                <p>SUCCESS</p>
+            </div>
+        <?php
+        } else if (isset($_SESSION['connection_error']) && !empty($_SESSION['connection_error'])) {
+            echo "error";
+            unset($_SESSION['connection_error']);
+        ?>
+            <div id="status" class="error">
+                <p>ERROR</p>
+            </div>
+        <?php } else { ?>
+            <div id="status">
+                <p>STATUS</p>
+            </div>
+        <?php } ?>
+        <p id="speed">
+
+        </p>
+        <div id="table-container">
+            <h3>Returned Data</h3>
+            <table>
+                <?php
+                if (isset($_SESSION['returned_data']) && !empty($_SESSION['returned_data'])) {
+                    $res = json_decode($_SESSION['returned_data'], true);
+                    echo display_return_data($res);
+                    unset($_SESSION['returned_data']);
+                } else {
+                    echo "No test yet";
+                }
+                ?>
+            </table>
+        </div>
+        <div id="table-container">
+            <h3>Connection Data</h3>
+            <table>
+                <?php
+                if (isset($_SESSION['connection_data']) && !empty($_SESSION['connection_data'])) {
+                    $res = json_decode($_SESSION['connection_data'], true);
+                    echo display_return_data($res);
+                    unset($_SESSION['connection_data']);
+                } else {
+                    echo "No test yet";
+                }
+                ?>
+            </table>
+
+        </div>
     </div>
+    <div class="play__stage--modal" id="modal">
+        <div class="container modal-container">
+            <div class="modal">
+                <button class="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="modal-content">
+                    <h4>Test Endpoint</h4>
+                    <p>
+                        <?php
+                        if (isset($_SESSION['error']) && !empty($_SESSION['error'])) {
+                            echo $_SESSION['error'];
+                            unset($_SESSION['error']);
+                        }
+                        ?>
+                    </p>
+                    <form action="script.php" method="POST" id="api-form">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
+        const modal = document.getElementById('modal');
+        const closeBtn = document.querySelector('.close-btn');
+        let apiForm = document.getElementById('api-form');
+        let endpoints = [...document.getElementsByClassName('endpoints')];
         let apis = [...document.getElementsByClassName('fa-angle-down')];
         apis.forEach(e => {
             e.addEventListener('click', () => {
@@ -188,9 +134,45 @@ session_start();
                     last.style.height = "";
                     e.classList.replace("fa-angle-up", 'fa-angle-down');
                 }
-                console.log(last.style.width)
             })
         })
+
+        endpoints.forEach(endpoint => {
+            endpoint.addEventListener('click', (e) => {
+                $("#api-form").html('');
+                let inputText = '';
+                let params = JSON.parse(e.target.dataset.param)
+                inputText += `<p> <label>Request Type</label>
+                <input type="text" name="request" value="${e.target.dataset.request}" readonly>
+                 </p>
+                `
+                for (let i = 0; i < params.length; i++) {
+                    inputText += `<p> <label for=${params[i].parameter_name}>${params[i].label}</label>
+                    <input type="${params[i].parameter_type}" name="${params[i].parameter_name}">
+                    </p>
+                    `;
+                }
+                inputText += `<input type="text" value="${e.target.dataset.url}" name="url" hidden>`
+                inputText += `<p>
+                    <button type="submit">Test Endpoint</button>
+                </p>`
+                $("#api-form").append(inputText);
+                openModal(e);
+            })
+        })
+
+
+
+        function openModal(e) {
+            e.preventDefault();
+
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+        closeBtn.addEventListener('click', closeModal);
     </script>
 </body>
 

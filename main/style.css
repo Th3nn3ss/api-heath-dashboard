@@ -104,6 +104,114 @@
 #result {
   margin-left: 310px;
 }
+
+#result h1 {
+  text-align: center;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+#table-container {
+  width: 70%;
+  display: inline-block;
+  max-width: 350px;
+}
+
+#status {
+  min-width: 250px;
+  max-width: 250px;
+  display: inline-block;
+  border-radius: 10px;
+  background: grey;
+  position: relative;
+  height: 80px;
+}
+
+#status.success {
+  background: #4caf50;
+}
+
+#status.error {
+  background: #ef5350;
+}
+
+#status p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2em;
+  color: #fafafa;
+}
+
+.play__stage--modal {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 10000;
+}
+
+.play__stage--modal .container {
+  background-color: #fff;
+  width: 400px;
+  height: 500px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.play__stage--modal .container .modal {
+  position: relative;
+}
+
+.play__stage--modal .container .modal .close-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  border: 0;
+  background-color: transparent;
+}
+
+.play__stage--modal .container .modal .close-btn i {
+  font-size: 2rem;
+  color: #0d0221;
+}
+
+.play__stage--modal .container .modal .modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+}
+
 @media only screen and (max-width: 650px) {
   #side-nav {
     overflow-x: hidden;
@@ -165,5 +273,14 @@
   }
   #result {
     margin-left: 70px;
+  }
+
+  .play__stage--modal {
+    position: fixed;
+  }
+
+  .play__stage--modal .container {
+    width: 300px;
+    height: 400px;
   }
 }
